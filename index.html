@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>homework-10</title>
+    <link rel="stylesheet" href="./scss/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-contents">
+          <a href="#"
+            ><img class="logo" src="./images/logo.png" alt="logo"
+          /></a>
+          <button class="btn-menu">
+            <img src="./images/bx-menu.svg" alt="menu" /> <span>Bo'limlar</span>
+          </button>
+          <div class="search">
+            <form>
+              <input name="search" type="text" placeholder="Qidirish..." />
+            </form>
+            <button class="btn-input">Qidirish</button>
+          </div>
+          <ul class="nav-responsive">
+            <li>
+              <div>
+                <img src="./images/scale.svg" alt="scale" />
+                Taqqoslash
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/payment.svg" alt="payment" />
+                To'lov
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/truck.svg" alt="truck" />
+                Trek
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/cart.svg" alt="cart" />
+                Savatcha <span>0</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/heart.svg" alt="heart" />
+                Sevimlilar <span>0</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/language-ru.svg" alt="language-ru" />
+                Русский
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="./images/bx-user.svg" alt="user" />
+                Kirish
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- <hr style="color: #fafafa; opacity: 0.5; margin-top: 50px" /> -->
+    <main>
+      <div class="navbar">
+        <div class="container">
+          <ul class="links">
+            <li>
+              <div class="ramadan">
+                <img src="./images/ramazon_icon.svg" alt="ramadan icon" />
+                Ramazon uchun
+              </div>
+            </li>
+            <li>Telefonlar va gadjetlar</li>
+            <li>Maishiy texnika</li>
+            <li>Kitoblar</li>
+            <li>Telivizorlar</li>
+            <li>Yangi kelganlar</li>
+            <li>Noutbooklar</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="js">
+        <div class="container">
+          <div class="cards">
+            <div class="card">
+              <div class="image">
+                <img src="${el.image}" alt="image" />
+                <div class="icons">
+                  <div
+                    style="
+                      padding: 8px 12px;
+                      background: #ff0101;
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                    "
+                    class="new"
+                  >
+                    <p>YANGI</p>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      gap: 8px;
+                      justify-content: center;
+                      align-items: center;
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                    "
+                    class="like"
+                  >
+                    <img src="./images/card-heart.svg" alt="heart" />
+                    <img src="./images/card-scale.svg" alt="scale" />
+                  </div>
+                </div>
+              </div>
+              <h3 class="description">${el.description}</h3>
+              <div class="rate">
+                <div style="display: flex; gap: 4px" class="rating">
+                  <img src="./images/rating.svg" alt="rating" />
+                  <img src="./images/rating.svg" alt="rating" />
+                  <img src="./images/rating.svg" alt="rating" />
+                  <img src="./images/rating.svg" alt="rating" />
+                  <img src="./images/rating.svg" alt="rating" />
+                </div>
+                <span>
+                  <img src="./images/comment.svg" alt="comment" /> 0 ta sharh
+                </span>
+                <p>${el.price}</p>
+                <span>${el.credit} so'm</span>
+                <div class="buttons">
+                  <button>Hoziroq harid qilish</button>
+                  <button>
+                    <img src="./images/card-cart.svg" alt="cart" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
