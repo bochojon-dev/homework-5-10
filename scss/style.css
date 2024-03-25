@@ -27,17 +27,19 @@ body {
   background: #f4f7fd;
 }
 body main {
-  padding-top: 80px;
+  padding-top: 28px;
 }
 body main .navbar {
+  position: fixed;
+  width: 100%;
   padding: 24px 0 20px;
   box-shadow: 0 8px 6px 0 #e8ebf3;
   background: #fff !important;
 }
 body main .navbar ul {
-  display: flex;
+  display: flex !important;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between !important;
 }
 body main .navbar ul .ramadan {
   display: flex;
@@ -47,24 +49,43 @@ body main .navbar ul .ramadan {
   font-weight: 500;
 }
 body main .js {
-  padding-top: 20px;
+  padding-top: 100px;
 }
-body main .js .cards {
-  padding: 20px;
+body main .js .wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
 }
-body main .js .cards .card {
-  position: relative;
+body main .js .wrapper .card {
+  width: 250px;
   background: #fff;
-  border-radius: 16px;
-  padding: 16px;
   display: flex;
   flex-direction: column;
-  align-items: start;
+}
+body main .js .wrapper .card h3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+body main .js .wrapper .card .like {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+body main .js .wrapper .card .new {
+  padding: 8px 12px;
+  background: #ff0101;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 body header {
   border-bottom: 1px solid #f0f0f0;

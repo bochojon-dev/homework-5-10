@@ -25,15 +25,18 @@
 body {
   background: #f4f7fd;
   main {
-    padding-top: 80px;
+    padding-top: 28px;
+
     .navbar {
+      position: fixed;
+      width: 100%;
       padding: 24px 0 20px;
       box-shadow: 0 8px 6px 0 #e8ebf3;
       background: #fff !important;
       ul {
-        display: flex;
+        display: flex !important;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-between !important;
         .ramadan {
           display: flex;
           align-items: center;
@@ -44,22 +47,41 @@ body {
       }
     }
     .js {
-      padding-top: 20px;
-      .cards {
-        padding: 20px;
+      padding-top: 100px;
+      .wrapper {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         flex-wrap: wrap;
+        gap: 30px;
+        align-items: center;
         .card {
-          position: relative;
+          width: 250px;
           background: #fff;
-          border-radius: 16px;
-          padding: 16px;
           display: flex;
           flex-direction: column;
-          align-items: start;
-          justify-content: center;
+          h3 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+          .like {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+          .new {
+            padding: 8px 12px;
+            background: #ff0101;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
         }
       }
     }

@@ -69,7 +69,32 @@
         </div>
       </div>
     </header>
-
+    <section
+      style="
+        background-color: #fff;
+        margin: auto;
+        z-index: 200;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+      "
+    >
+      <div class="container">
+        <div class="loading">
+          <div
+            style="
+              padding-top: 120px;
+              display: flex;
+              justify-content: space-between;
+              gap: 30px;
+              flex-wrap: wrap;
+            "
+            class="loads"
+          ></div>
+        </div>
+      </div>
+    </section>
+    <!-- <div class="wrapper"></div> -->
     <!-- <hr style="color: #fafafa; opacity: 0.5; margin-top: 50px" /> -->
     <main>
       <div class="navbar">
@@ -93,64 +118,7 @@
 
       <div class="js">
         <div class="container">
-          <div class="cards">
-            <div class="card">
-              <div class="image">
-                <img src="${el.image}" alt="image" />
-                <div class="icons">
-                  <div
-                    style="
-                      padding: 8px 12px;
-                      background: #ff0101;
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                    "
-                    class="new"
-                  >
-                    <p>YANGI</p>
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      flex-direction: column;
-                      gap: 8px;
-                      justify-content: center;
-                      align-items: center;
-                      position: absolute;
-                      top: 0;
-                      right: 0;
-                    "
-                    class="like"
-                  >
-                    <img src="./images/card-heart.svg" alt="heart" />
-                    <img src="./images/card-scale.svg" alt="scale" />
-                  </div>
-                </div>
-              </div>
-              <h3 class="description">${el.description}</h3>
-              <div class="rate">
-                <div style="display: flex; gap: 4px" class="rating">
-                  <img src="./images/rating.svg" alt="rating" />
-                  <img src="./images/rating.svg" alt="rating" />
-                  <img src="./images/rating.svg" alt="rating" />
-                  <img src="./images/rating.svg" alt="rating" />
-                  <img src="./images/rating.svg" alt="rating" />
-                </div>
-                <span>
-                  <img src="./images/comment.svg" alt="comment" /> 0 ta sharh
-                </span>
-                <p>${el.price}</p>
-                <span>${el.credit} so'm</span>
-                <div class="buttons">
-                  <button>Hoziroq harid qilish</button>
-                  <button>
-                    <img src="./images/card-cart.svg" alt="cart" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="wrapper"></div>
         </div>
       </div>
     </main>
