@@ -30,6 +30,7 @@ body main {
   padding-top: 28px;
 }
 body main .navbar {
+  z-index: 100;
   position: fixed;
   width: 100%;
   padding: 24px 0 20px;
@@ -59,33 +60,93 @@ body main .js .wrapper {
   align-items: center;
 }
 body main .js .wrapper .card {
+  padding: 16px;
+  border-radius: 12px;
   width: 250px;
   background: #fff;
   display: flex;
   flex-direction: column;
 }
+body main .js .wrapper .card .card1 {
+  position: relative;
+}
 body main .js .wrapper .card h3 {
+  letter-spacing: 0.2;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5098039216);
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-body main .js .wrapper .card .like {
+body main .js .wrapper .card .rate {
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .js .wrapper .card .rate span {
+  font-style: 14px;
+  color: rgba(0, 0, 0, 0.5215686275);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+body main .js .wrapper .card .price {
+  color: #048eff;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.6;
+  margin-bottom: 16px !important;
+}
+body main .js .wrapper .card .credit {
+  color: #fe943c;
+  border: 2px solid #fe943c;
+  padding: 8px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+body main .js .wrapper .card .buttons {
+  padding-top: 24px;
+  display: flex !important;
+  justify-content: space-between;
+}
+body main .js .wrapper .card .buttons .card-cart {
+  border: 0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00bfaf;
+}
+body main .js .wrapper .card .buttons .buy_now {
+  border: 0;
+  color: #fff;
+  padding: 4px 30px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #008dff;
+}
+body main .js .wrapper .card .icons {
+  display: flex;
+  justify-content: space-between !important;
+}
+body main .js .wrapper .card .icons .like {
   display: flex;
   flex-direction: column;
   gap: 8px;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
-body main .js .wrapper .card .new {
+body main .js .wrapper .card .icons .new {
   padding: 8px 12px;
+  height: 34px;
+  border: radius 6px;
   background: #ff0101;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 body header {
   border-bottom: 1px solid #f0f0f0;
@@ -124,13 +185,12 @@ body header .header-contents .search {
   position: relative;
 }
 body header .header-contents .search input {
-  width: 480px !important;
+  max-width: 480px !important;
   outline: none;
   border: 2px solid #008dff;
   border-radius: 10px;
   padding: 8px 6px;
   line-height: 16px;
-  width: 100%;
 }
 body header .header-contents .search input::-moz-placeholder {
   padding: 10px 8px !important;
@@ -171,4 +231,45 @@ body header .header-contents .nav-responsive div span {
   display: flex;
   align-items: center !important;
   justify-content: center;
+}
+body header .header-contents .btn-open {
+  display: none;
+  border: 0;
+  background: none;
+  align-items: center;
+  justify-content: center;
+}
+body header .header-contents .btn-open:hover {
+  background: #ccc;
+}
+
+@media (min-width: 1370px) {
+  header .header-contents {
+    gap: 15px;
+  }
+  header .header-contents .search input {
+    width: 400px !important;
+  }
+}
+@media (max-width: 1090px) {
+  header .header-contents {
+    gap: 10px;
+  }
+  header .header-contents .search input {
+    width: 350px;
+  }
+}
+@media (max-width: 900px) {
+  header .header-contents .nav-responsive {
+    display: none;
+  }
+  header .header-contents .nav-responsive .btn-open {
+    display: flex !important;
+  }
+  header .header-contents .btn-menu {
+    display: none !important;
+  }
+  main .navbar {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=style.css.map */

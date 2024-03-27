@@ -112,20 +112,26 @@ function createCrad(data) {
   data.forEach((product) => {
     let card = document.createElement("div");
     card.classList.add("card");
-    card.innerHTML = `<div class="card">
-    <div style="margin:0 auto;" class="image">
-      <img style="width:200px;height:170px;padding:10px" src="${product.image}" alt="image" />
-      <div class="icons">
+    card.innerHTML = `<div class="card1">
+    <div class="icons">
         <div class="new">
           <p>YANGI</p>
         </div>
         <div class="like">
-          <img src="./images/card-heart.svg" alt="heart" />
-          <img src="./images/card-scale.svg" alt="scale" />
+          <img  src="./images/card-heart.svg" alt="heart" />
+          <img  src="./images/card-scale.svg" alt="scale" />
         </div>
-      </div>
     </div>
-    <h3 class="description">${product.description}</h3>
+    <div class="image">
+      <img name="product-image" data-id=${
+        product.id
+      } style="width:200px;height:170px;padding:10px" src="${
+      product.image
+    }" alt="image" />
+    </div>
+    <h3 title="${product.description}" class="description">${
+      product.description
+    }</h3>
     <div style="display:flex" class="rate">
       <div style="display: flex; gap: 4px" class="rating">
         <img src="./images/rating.svg" alt="rating" />
@@ -138,11 +144,13 @@ function createCrad(data) {
         <img src="./images/comment.svg" alt="comment" /> 0 ta sharh
       </span>
       </div>
-      <p>${product.price}</p>
-      <span>${product.credit} so'm</span>
+      <p class="price">${product.price} so'm</p>
+      <span class="credit">${Math.ceil(
+        product.price / 8
+      )}.99 so'm x 12 oy</span>
       <div class="buttons">
-        <button>Hoziroq harid qilish</button>
-        <button>
+        <button class="buy_now">Hoziroq harid qilish</button>
+        <button class="card-cart">
           <img src="./images/card-cart.svg" alt="cart" />
         </button>
       </div>
@@ -151,3 +159,13 @@ function createCrad(data) {
   });
   wrapper.appendChild(fragment);
 }
+const singleRoute = (id) => {
+  window.open(`/pages/products.html?id=${id}`, "_self");
+};
+
+wrapper.addEventListener("click", (e) => {
+  if (e.target.name == "product-image") {
+    let id = e.target.dataset.id;
+    singleRoute(id);
+  }
+});
