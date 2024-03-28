@@ -102,7 +102,6 @@ async function fetchData(api) {
     .then((res) => {
       createCrad(res);
       createCategory(res);
-      // return res;
     })
     .catch((error) => console.log(error))
     .finally(() => {
@@ -119,17 +118,17 @@ function createCrad(data) {
   data.forEach((product) => {
     let card = document.createElement("div");
     card.classList.add("card");
-    card.innerHTML = `<div class="card1">
-    <div class="icons">
+    card.innerHTML = `<div id="data-id" class="card1">
+    <div  class="icons">
         <div class="new">
           <p>YANGI</p>
         </div>
         <div class="like">
-          <img  src="./images/card-heart.svg" alt="heart" />
+          <img name="product-heart"  src="./images/card-heart.svg" alt="heart" />
           <img  src="./images/card-scale.svg" alt="scale" />
         </div>
     </div>
-    <div class="image">
+    <div name="product-heart" class="image">
       <img name="product-image" data-id=${
         product.id
       } style="width:200px;height:170px;padding:10px" src="${
@@ -166,14 +165,29 @@ function createCrad(data) {
   });
   wrapper.appendChild(fragment);
 }
+
+// single route
 const singleRoute = (id) => {
   window.open(`/pages/products.html?id=${id}`, "_self");
 };
+const setWishes = async (id) => {
+  let data = await fetch(`${API}/${id}`);
+  data
+    .json()
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((error) => console.log(error));
+};
 
 wrapper.addEventListener("click", (e) => {
-  if (e.target.name == "product-image") {
-    let id = e.target.dataset.id;
+  let { name } = e.target;
+  if (name == "product-image") {
+    let id = e.target.closest("[data-id]").dataset.id;
     singleRoute(id);
+  } else if (name == "product-heart") {
+    let id = e.target.closest("[data-id]").dataset.id;
+    setWishes(id);
   }
 });
 
