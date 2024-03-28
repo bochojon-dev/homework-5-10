@@ -1,38 +1,3 @@
-// import { PRODUCTS } from "./server.js";
-// const cards = document.querySelector(".cards");
-// let fragment = document.createDocumentFragment();
-// PRODUCTS.forEach((el, index) => {
-//   let card = document.createElement("div");
-//   card.innerHTML = `
-//                 <div class="image">
-//                   <div class="sale">
-//                     <div class="tick">
-//                       <img src="./images/tick.svg" alt="tick" />
-//                       <p>Нет в наличии</p>
-//                     </div>
-//                     <button>SALE</button>
-//                     <div class="gift">
-//                       <img src="./images/gift.svg" alt="gift" />
-//                       <p>Подарок</p>
-//                     </div>
-//                   </div>
-//                   <img src="${el.image}" alt="image" />
-//                 </div>
-//                 <div style="border-top:1px solid #eaeaea" class="rating">
-//                   <img src="./images/rating.png" alt="rating" />
-//                   <p>(12) отзывов</p>
-//                 </div>
-//                 <h4 title="${el.description}"  class="heading">${el.description}</h4>
-//                 <div class="cost">
-//                   <h4>${el.cost}$</h4>
-//                   <span>${el.discountPercentage}$</span>
-//                 </div>
-//     `;
-//   card.classList.add("card");
-//   fragment.appendChild(card);
-// });
-// cards.appendChild(fragment);
-
 // LOADING
 const loads = document.querySelector(".loads");
 const load = document.querySelector(".load");
@@ -110,6 +75,7 @@ async function fetchData(api) {
 }
 fetchData(API);
 
+const selected = document.querySelector(".selected");
 function createCrad(data) {
   while (wrapper.firstChild) {
     wrapper.firstChild.remove();
@@ -118,12 +84,13 @@ function createCrad(data) {
   data.forEach((product) => {
     let card = document.createElement("div");
     card.classList.add("card");
-    card.innerHTML = `<div id="data-id" class="card1">
+    card.innerHTML = `<div id="[data-id]" class="card1">
     <div  class="icons">
         <div class="new">
           <p>YANGI</p>
         </div>
         <div class="like">
+          <span><img style="display:none" name="selected" class="selected" src="./images/bxs-heart.svg" alt="selected-heart"/></span>
           <img name="product-heart"  src="./images/card-heart.svg" alt="heart" />
           <img  src="./images/card-scale.svg" alt="scale" />
         </div>
@@ -187,6 +154,7 @@ wrapper.addEventListener("click", (e) => {
     singleRoute(id);
   } else if (name == "product-heart") {
     let id = e.target.closest("[data-id]").dataset.id;
+    selected.style.display = "block";
     setWishes(id);
   }
 });

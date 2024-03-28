@@ -35,10 +35,10 @@ function createSingleProduct(data) {
 // LOADING
 const loads = document.querySelector(".loads");
 const load = document.querySelector(".load");
-let count = Array.fill("");
-// for (i = 0; i <= 9; i++) {
-//   count.push(i);
-// }
+let count = [];
+for (i = 0; i <= 9; i++) {
+  count.push(i);
+}
 let fragment = document.createDocumentFragment();
 count.forEach((el, index) => {
   let div = document.createElement("div");
