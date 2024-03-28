@@ -26,9 +26,39 @@ checkId();
 const productWrapper = document.querySelector(".product-wrapper");
 function createSingleProduct(data) {
   productWrapper.innerHTML = `
-    <img src="${data.image}" width="300px" alt="image">
-        <h2>${data.title}</h2>
-        <h1>${data.price} </h1>
+  <div style="padding-top: 100px;display:flex;align-items:center;gap:60px" class="product-wrapper">
+  <div style="position:relative" class="product-image">
+    <img width="300px" src="${data.image}" alt="img" />
+    <span style="position:absolute;top:1git0;left:10;" class="span">
+      <p style="padding: 8px 16px; background: #f00;width:60px;" class="new">Yangi</p>
+      <span class="icon">
+        <img src="../images/card-heart.svg" alt="heart" />
+        <img src="../images/card-cart.svg" alt="cart" />
+      </span>
+    </span>
+  </div>
+  <div class="buy">
+    <h2></h2>
+    <div style="display: flex; gap: 4px" class="rating">
+      <img src="../images/rating.svg" alt="rating" />
+      <img src="../images/rating.svg" alt="rating" />
+      <img src="../images/rating.svg" alt="rating" />
+      <img src="../images/rating.svg" alt="rating" />
+      <img src="../images/rating.svg" alt="rating" />
+    </div>
+    <span>
+      <img src="../images/comment.svg" alt="comment" /> 0 ta sharh
+    </span>
+    <div class="share">
+      <img src="../images/bxs-share-alt.svg" alt="share" />
+      <p>Ulashish</p>
+    </div>
+  </div>
+  <h2>${data.price} so'm </h2>
+  <h4>${Math.ceil(data.price / 8)}.99 so'm x 12 oy </h4>
+  <button>Savatga qo'shish</button>
+  <button>Hoziroq harid qiling</button>
+</div>
     `;
 }
 

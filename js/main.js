@@ -90,9 +90,9 @@ function createCrad(data) {
           <p>YANGI</p>
         </div>
         <div class="like">
-          <span><img style="display:none" name="selected" class="selected" src="./images/bxs-heart.svg" alt="selected-heart"/></span>
-          <img name="product-heart"  src="./images/card-heart.svg" alt="heart" />
-          <img  src="./images/card-scale.svg" alt="scale" />
+          <span class="selected"><img style="display:none" name="selected" class="selected" src="./images/bxs-heart.svg" alt="selected-heart"/></span>
+          <img style="padding:6px;background:#dddddd88;border-radius:50%;" name="product-heart"  src="./images/card-heart.svg" alt="heart" />
+          <img style="padding:6px;background:#dddddd88;border-radius:50%;" src="./images/card-scale.svg" alt="scale" />
         </div>
     </div>
     <div name="product-heart" class="image">
