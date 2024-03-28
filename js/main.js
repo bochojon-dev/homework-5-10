@@ -99,7 +99,11 @@ async function fetchData(api) {
   let data = await fetch(api);
   data
     .json()
-    .then((res) => createCrad(res))
+    .then((res) => {
+      createCrad(res);
+      createCategory(res);
+      // return res;
+    })
     .catch((error) => console.log(error))
     .finally(() => {
       loads.style.display = "none";
@@ -108,6 +112,9 @@ async function fetchData(api) {
 fetchData(API);
 
 function createCrad(data) {
+  while (wrapper.firstChild) {
+    wrapper.firstChild.remove();
+  }
   fragment = document.createDocumentFragment();
   data.forEach((product) => {
     let card = document.createElement("div");
@@ -168,4 +175,37 @@ wrapper.addEventListener("click", (e) => {
     let id = e.target.dataset.id;
     singleRoute(id);
   }
+});
+
+// CATEGORY
+const category = document.querySelector(".category");
+function createCategory(data) {
+  while (category.firstChild) {
+    category.firstChild.remove();
+  }
+  let fragment = document.createDocumentFragment();
+  let categories = Array.from(new Set(data.map((el) => el.category)));
+  categories.forEach((el) => {
+    let option = document.createElement("option");
+    option.innerHTML = el;
+    option.value = el;
+    fragment.appendChild(option);
+  });
+  category.appendChild(fragment);
+}
+category.addEventListener("change", async (e) => {
+  loads.style.display = "flex";
+  let value = e.target.value;
+  let categoryUrl = value === "All" ? "" : `/category/${value}`;
+  let data = await fetch(`${API}${categoryUrl}`);
+  data
+    .json()
+    .then((res) => {
+      createCrad(res);
+      // fetchData(res);
+    })
+    .catch((error) => console.log(error, "ok"))
+    .finally(() => {
+      loads.style.display = "none";
+    });
 });
